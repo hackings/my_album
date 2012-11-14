@@ -24,6 +24,7 @@ class AlbumsController < ApplicationController
   end  
 
   def destroy
+    redirect_to albums_path
   end  
 
 private
