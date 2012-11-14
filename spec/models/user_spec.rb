@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Associations' do
+    it{
+      should have_many(:albums).dependent(:destroy)
+      should have_many(:songs).through(:albums)
+    }
+  end  
 end
