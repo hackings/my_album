@@ -1,4 +1,7 @@
 class AlbumsController < ApplicationController
+
+  before_filter :get_album, :except => [ :index, :new ]
+
   def index
   end
 
@@ -7,20 +10,22 @@ class AlbumsController < ApplicationController
   end  
 
   def show
-    @album = Album.find params[:id]
   end 
 
   def edit
-    @album = Album.find params[:id]
   end 
 
   def update
-    @album = Album.find params[:id]
     if @album.update_attributes params[:album]
       redirect_to album_path(@album)
     else
       render :action => :edit
     end  
+  end  
+
+private
+  def get_album
+    @album = Album.find params[:id]
   end  
 
 end
