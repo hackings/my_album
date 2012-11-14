@@ -3,6 +3,7 @@ class AlbumsController < ApplicationController
   before_filter :get_album, :except => [ :index, :new ]
 
   def index
+    @albums = Album.where(" name LIKE '%#{params[:search]}%'")
   end
 
   def new
