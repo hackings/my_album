@@ -38,7 +38,7 @@ feature 'Album crud', %q{
 
   scenario "search album" do
     @album = FactoryGirl.create(:album)
-    visit albums_page
+    visit albums_path
     fill_in "search", :with =>  'album'
     click_button('Search')
 
