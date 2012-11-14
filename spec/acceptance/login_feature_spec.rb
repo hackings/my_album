@@ -7,18 +7,8 @@ feature 'Login feature', %q{
 } do
 
 
-  background do
-    @user = FactoryGirl.create(:user)
-  end  
-
   scenario 'should show login page' do
-    visit login_page
-
-    page.should have_content("Sign in")
-    visit login_page
-    fill_in "user[email]", :with => @user.email
-    fill_in "user[password]", :with => 'password'
-    click_button('Sign in')
+    user_login
 
     page.should have_content("Sign out")
     page.should have_content("List of albums")

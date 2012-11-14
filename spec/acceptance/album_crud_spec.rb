@@ -7,11 +7,7 @@ feature 'Album crud', %q{
 } do
   
   background do
-    @user = FactoryGirl.create(:user)
-    visit login_page
-    fill_in "user[email]", :with => @user.email
-    fill_in "user[password]", :with => 'password'
-    click_button('Sign in')
+    user_login
   end
 
   scenario 'should create a album' do
