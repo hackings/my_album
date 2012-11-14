@@ -24,6 +24,9 @@ class AlbumsController < ApplicationController
   end  
 
   def destroy
+    if @album.destroy
+      flash[:notice] = 'Album removed successfully.'
+    end  
     redirect_to albums_path
   end  
 
