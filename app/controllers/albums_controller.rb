@@ -23,6 +23,9 @@ class AlbumsController < ApplicationController
     end  
   end  
 
+  def destroy
+  end  
+
 private
   def get_album
     @album = Album.find params[:id]
