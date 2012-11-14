@@ -15,6 +15,7 @@ class AlbumsController < ApplicationController
   end 
 
   def update
+    redirect_to albums_path(@album)
   end  
 
 end
