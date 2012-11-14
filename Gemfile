@@ -25,6 +25,7 @@ end
 gem 'jquery-rails'
 
 group :development,:test do
+ gem 'shoulda' 
  gem 'database_cleaner'
  gem 'rspec-rails'
  gem 'factory_girl_rails'
