@@ -29,7 +29,7 @@ feature 'Album crud', %q{
     visit("albums/#{@album.id}")
     click_link('Edit')
 
-    page.should have_content('Edit My Album')
+    page.should have_content('MyAlbum')
     fill_in "album[name]", :with =>  'My First Album'
     click_button('Save')
 

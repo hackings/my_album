@@ -1,0 +1,9 @@
+
+
+<%= form_for @album, { :multipart => true } do |f|%>
+  Name <%= f.text_field :name %>
+  Cover <%= f.file_field :cover %>
+  <%= f.submit('Save') %>
+<%end%>
+
+
