@@ -15,7 +15,12 @@ class AlbumsController < ApplicationController
   end 
 
   def update
-    redirect_to albums_path(@album)
+    @album = Album.find params[:id]
+    if @album.update_attributes params[:album]
+      redirect_to albums_path(@album)
+    else
+      render :action => :edit
+    end  
   end  
 
 end
