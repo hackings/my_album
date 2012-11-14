@@ -1,8 +1,8 @@
 module NavigationHelpers
   # Put helper methods related to the paths in your application here.
 
-  def homepage
-    "/"
+  def login_page
+    new_user_session_path 
   end
 end
 
