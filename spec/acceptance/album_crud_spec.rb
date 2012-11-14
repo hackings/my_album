@@ -37,12 +37,12 @@ feature 'Album crud', %q{
   end
 
   scenario "search album" do
-    @album = FactoryGirl.create(:album)
+    @album = FactoryGirl.create(:album, :name => 'Album in search')
     visit albums_path
     fill_in "search", :with =>  'album'
     click_button('Search')
 
-    page.should have_content('album')
+    page.should have_content('Album in search')
   end
   
   scenario "delete the album" do
