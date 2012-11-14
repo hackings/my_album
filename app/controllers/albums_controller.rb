@@ -3,6 +3,7 @@ class AlbumsController < ApplicationController
   end
 
   def new
+    @album = Album.new
   end  
 
 end
