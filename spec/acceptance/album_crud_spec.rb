@@ -19,7 +19,7 @@ feature 'Album crud', %q{
     click_link('New Album')
 
     fill_in "album[name]", :with => 'My Album'
-    attach_file 'album[cover]', :with => 'c:/images/test.jpg'
+    attach_file 'album[cover]', :with => 'home/vishnu/Pictures/vishnu.jpg'
     click_button('Save')
     page.should have_content('My Album')
   end
