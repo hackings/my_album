@@ -1,6 +1,8 @@
 MyAlbum::Application.routes.draw do
   devise_for :users
-
+  authenticated :user do
+    root :to => "albums#index"
+  end  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
