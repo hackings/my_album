@@ -27,7 +27,7 @@ feature 'Album crud', %q{
   scenario 'update the album' do
     @album = FactoryGirl.create(:album)
     visit("albums/#{@album.id}")
-    click('Edit')
+    click_link('Edit')
 
     page.should have_content('Edit My Album')
     fill_in "album[name]", :with =>  'My First Album'
@@ -48,7 +48,7 @@ feature 'Album crud', %q{
   scenario "delete the album" do
     @album = FactoryGirl.create(:album)
     visit("albums/#{@album.id}")
-    click('Remove')
+    click_link('Remove')
     page.should have_content('Album removed successfully.')
     page.should_not have_content('My First Album')
   end
